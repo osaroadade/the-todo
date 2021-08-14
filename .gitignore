@@ -1,3 +1,3 @@
 ###Ignorng these files
-.idea
+.idea/*
 .node_modules
