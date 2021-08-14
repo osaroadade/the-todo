@@ -1,0 +1,12 @@
+{
+  "name": "the-todo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "sass": "sass.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
