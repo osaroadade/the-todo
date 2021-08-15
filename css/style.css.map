@@ -1,0 +1,12 @@
+{
+    "version": 3,
+    "sourceRoot": "",
+    "sources": [
+        "../sass/global/_colors.sass",
+        "../sass/components/_reset.sass",
+        "../sass/utility/_variables.sass"
+    ],
+    "names": [],
+    "mappings": "AAAA;EACC;EACA;EACA;;;ACFA;EACC;EACA;EACA;;;ACFF",
+    "file": "style.css.map"
+}

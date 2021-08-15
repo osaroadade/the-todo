@@ -1,0 +1,13 @@
+html {
+  color: green;
+  background-color: red;
+  border: 1px solid red;
+}
+
+*::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*# sourceMappingURL=varabiles.css.map *//*# sourceMappingURL=style.css.map */
