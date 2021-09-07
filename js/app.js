@@ -411,7 +411,7 @@ function updateChartCount() {
 
     const percentComplete = document.querySelector(`.percent-complete`)
 
-    const progressPercent = Math.round(updateChartCompleted() / updateChartTotal() * 100)
+    const progressPercent = Math.round(updateChartCompleted() / updateChartTotal() * 100) || 0
 
     percentComplete.textContent = `${progressPercent}%`
 
