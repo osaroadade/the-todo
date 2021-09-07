@@ -1,0 +1,98 @@
+@use "../utility" as utl
+
+fieldset
+    border: none
+
+select
+    appearance: none
+    cursor: pointer
+
+    option[value=""]
+        color: var(--select-placeholder)
+
+    &.placeholder-active
+        color: var(--select-placeholder)
+
+input, select
+    padding: utl.rem(8) utl.rem(14)
+    font-size: utl.rem(14)
+    width: 100%
+    border: none
+    border-radius: utl.rem(4)
+    background-color: var(--input-bg-color)
+    color: var(--input-text-color)
+
+    // &::placeholder
+    //     color: var(--input-placeholder)
+
+input[type="search"]
+    appearance: none
+
+    &::-webkit-search-decoration, &::-webkit-search-cancel-button, &::-webkit-search-results-button, &::-webkit-search-results-decoration
+        display: none
+
+.welcome--title
+
+    &__toggle--appearance
+
+        .theme-toggle
+
+            $size: utl.rem(24)
+            &__wrapper
+                background: linear-gradient(90deg, var(--toggle-start), var(--toggle-end))
+                height: $size
+                border-radius: $size
+                position: relative
+
+                input[type="radio"]
+                    display: inline-block
+                    width: utl.rem(16)
+                    height: 100%
+                    margin-right: utl.rem(-2)
+                    opacity: 0
+                    position: relative
+                    z-index: 1
+                    cursor: pointer
+
+                    &:focus
+                        & ~ .theme-toggle__switcher
+                            border: utl.rem(1.5) solid var(--toggle-focus)
+                            box-shadow: inset utl.rem(1) utl.rem(1) utl.rem(4) 0 var(--box-shadow-inset)
+
+            &__bg
+                position: absolute
+                top: 0
+                left: 0
+                width: 100%
+                height: 100%
+                z-index: 0
+                border-radius: $size
+
+            &__switcher
+                $w-h: utl.rem(18)
+                position: absolute
+                width: $w-h
+                height: $w-h
+                border-radius: 50%
+                background-color: var(--togggle-switch)
+                transition: all 100ms ease-out
+                z-index: 2
+                top: 50%
+                transform: translate(-50%, -50%)
+                left: 50%
+
+#light:checked
+    & ~ .theme-toggle__switcher
+        left: utl.rem(4)
+        transform: translate(0, -50%)
+
+    & ~ .theme-toggle__bg
+        background-color: var(--toggle-end)
+
+#dark:checked
+    & ~ .theme-toggle__switcher
+        right: utl.rem(-4)
+        transform: translate(utl.rem(4), -50%)
+
+    & ~ .theme-toggle__bg
+        background-color: var(--background-low)

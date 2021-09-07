@@ -1,15 +1,159 @@
 <!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>The Todo App</title>
-    <link rel="stylesheet" href="../css/style.css">
-    <script defer src="js/app.js"></script>
-</head>
-<body>
 
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+            content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>The Todo App</title>
+        <link rel="stylesheet" href="./css/dark.css" media="(prefers-color-scheme: dark)">
+        <link rel="stylesheet" href="./css/light.css" media="(prefers-color-scheme: light)">
+        <link rel="stylesheet" href="./css/style.css">
+        <script src="js/app.js" type="module"></script>
+    </head>
+
+    <body>
+        <!-- pop, c-task and c-group -->
+        <div class="t g" id="popover">
+            <div class="t-create t-create-task">
+                <header class="t-create--heading">
+                    <h4>Create New Task</h4>
+                </header>
+                <label for="createTaskInput"></label>
+                <input class="t-create--input" type="text" name="create-task" id="createTaskInput"
+                    placeholder="New task's name" required>
+                <div class="form-description">
+                    <p class="task-required">Required</p>
+                </div>
+
+                <!-- Return to js code later -->
+                <label for="selectGroup"></label>
+                <select class="placeholder-active" name="select-group" id="selectGroup">
+                    <option class="placeholder" value="" selected>Select group to add task to (Optional)</option>
+                </select>
+                <div class="form-description">
+                    <p>Optional</p>
+                </div>
+                <div class="t-create--btn-group">
+                    <button class="btn-secondary" id="cancelTask">Cancel</button>
+                    <button class="btn-primary" id="createTask">Create Task</button>
+                </div>
+            </div>
+            <div class="g-create g-create-group">
+                <header class="g-create--heading">
+                    <h4>Create New Group</h4>
+                </header>
+                <label for="createGroupInput"></label>
+                <input class="t-create--input" type="text" name="create-group" id="createGroupInput"
+                    placeholder="New group's name" required>
+                <div class="form-description">
+                    <p class="group-required">Required</p>
+                </div>
+                <div class="g-create--btn-group">
+                    <button class="btn-secondary" id="cancelGroup">Cancel</button>
+                    <button class="btn-primary" id="createGroup">Create Group</button>
+                </div>
+            </div>
+        </div>
+        <main class="container">
+            <header class="welcome">
+                <div class="welcome--title">
+                    <h4 class="welcome--title__date"></h4>
+                    <fieldset class="welcome--title__toggle--appearance" aria-label="theme switcher" role="radiogroup">
+                        <!-- <legend>
+                            <h1>Theme Switching Toggle</h1>
+                        </legend> -->
+                        <div class="theme-toggle">
+                            <label for="light"></label>
+                            <label for="system"></label>
+                            <label for="dark"></label>
+                            <div class="theme-toggle__wrapper">
+                                <input type="radio" name="theme" id="light" title="Light Theme">
+                                <input type="radio" name="theme" id="system" checked title="System Prefrence">
+                                <input type="radio" name="theme" id="dark" title="Dark Theme">
+                                <div aria-hidden="true" class="theme-toggle__bg"></div>
+                                <div aria-hidden="true" class="theme-toggle__switcher"></div>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+                </div>
+                <div class="welcome--search">
+                    <label for="search"></label>
+                    <input type="search" name="search" id="search" placeholder="Search" autocomplete="off"
+                        autocapitalize="off" autocorrect="off" spellcheck="false" max-length="30" aria-label="Search">
+                    <span id="searchAlt">/</span>
+                </div>
+            </header>
+            <section class="groups">
+                <header class="groups-heading">
+                    <h3 class="groups-heading--title">Groups</h3>
+                </header>
+                <div class="groups-card">
+                </div>
+                <div class="groups-chart">
+                    <div class="groups-chart__circle">
+                        <h4 class="percent-complete">50%</h4>
+                        <svg>
+                            <circle r="70" cx="70" cy="70" class="track"></circle>
+                            <circle r="70" cx="70" cy="70" class="progress"></circle>
+                        </svg>
+                    </div>
+                    <ul class="groups-chart__desc">
+                        <li>Completed: <span class="groups-chart__desc-completed">0</span></li>
+                        <li>Uncompleted: <span class="groups-chart__desc-uncompleted">0</span></li>
+                        <li>Total: <span class="groups-chart__desc-total">0</span></li>
+                    </ul>
+                </div>
+            </section>
+            <section class="tasks">
+                <header class="tasks-heading">
+                    <h3 class="tasks-heading--title">Tasks</h3>
+                </header>
+                <div class="tasks-card">
+                </div>
+            </section>
+            <section class="completed">
+                <header class="completed-heading">
+                    <h3 class="completed-heading--title">Completed</h3>
+                </header>
+                <div class="completed-card">
+                </div>
+            </section>
+        </main>
+        <div class="task-init btn-group">
+            <button class="btn-primary" id="btnGroupPop">Create New Group</button>
+            <button class="btn-secondary" id="btnTaskPop">+</button>
+        </div>
+    </body>
+
 </html>
+
+<template id="task-template">
+    <div class="task-card--item">
+        <div class="task-card--item__check"></div>
+        <div class="task-card--item__task">
+            <p></p>
+        </div>
+    </div>
+</template>
+<template id="group-template">
+    <div class="groups-card--item">
+        <div class="groups-card--item__title">
+            <h4></h4>
+        </div>
+        <div class="groups-card--item__detail">
+            <p></p>
+        </div>
+        <div class="groups-card--item__chart">
+            <div class="horizontal-chart--main">
+                <div class="horizontal-chart--main__child"></div>
+            </div>
+            <p>11%</p>
+        </div>
+    </div>
+</template>
+<template id="empty-state">
+    <p class="empty-state"></p>
+</template>

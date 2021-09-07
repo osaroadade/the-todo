@@ -1,0 +1,53 @@
+@use "../utility" as utl
+
+// Welcome Header
+.welcome
+    display: flex
+    flex-direction: column
+    margin-bottom: utl.rem(20)
+
+    &--title
+        display: flex
+        padding-bottom: utl.rem(12)
+        justify-content: space-between
+        align-items: center
+
+        &__date
+            font-weight: 400
+
+        &__toggle--appearance
+            overflow: clip
+
+    &--search
+        width: 100%
+        position: relative
+
+        span
+            display: inline-flex
+            justify-content: center
+            align-content: center
+            position: absolute
+            color: var(--text-medium)
+            top: 50%
+            right: utl.rem(8)
+            transform: translateY(-50%)
+            border: utl.rem(1) solid var(--text-medium)
+            height: utl.rem(20)
+            font-size: utl.rem(12)
+            width: utl.rem(20)
+            line-height: 1.5
+            border-radius: utl.rem(4)
+
+// Groups Header
+.groups-heading, .tasks-heading, .completed-heading
+    padding-bottom: utl.rem(12)
+
+.pop
+    .t-create, .g-create
+        &--heading
+            padding-bottom: utl.rem(12)
+            text-align: center
+
+            h4
+                font-weight: normal
+                font-size: utl.rem(15)

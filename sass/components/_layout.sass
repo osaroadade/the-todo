@@ -1,0 +1,28 @@
+@use "../utility" as utl
+
+//Global containers
+
+.container
+    padding: utl.rem(20)
+
+section
+    & + section
+        margin-top: utl.rem(18)
+
+.btn-group
+    display: flex
+    justify-content: space-between
+    width: 100%
+    padding: utl.rem(14) utl.rem(20)
+
+.task-init
+    transform: translateY(-100%)
+    top: 100%
+    position: fixed
+    background-color: var(--background-color)
+
+.completed
+    margin-bottom: utl.rem(60)
+
+.pop
+    padding: 0 utl.rem(20)

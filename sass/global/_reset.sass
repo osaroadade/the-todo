@@ -1,0 +1,15 @@
+@use "../utility" as utl
+
+*, *::after, *::before
+    padding: 0
+    margin: 0
+    box-sizing: border-box
+    font-family: utl.$base-font
+
+html, body
+    font-size: 100%
+    background-color: var(--background-color)
+    color: var(--text-high)
+
+body
+    transition: color 500ms ease, background-color 500ms ease

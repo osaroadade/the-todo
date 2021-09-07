@@ -1,0 +1,45 @@
+@use "../utility" as utl
+
+*
+    &::-webkit-scrollbar
+        display: none
+        -webkit-appearance: none
+
+        &:vertical
+            width: utl.rem(16)
+
+        &:horizontal
+            height: utl.rem(16)
+
+        &-button, &-corner
+            display: none
+
+        &-track
+            // background-color: red
+            // border-color: green
+
+            &:hover
+                // background-color: blue
+                // border-color: purple
+
+            &:vertical
+                border-width: 0 0 0 utl.rem(1)
+
+                &:corner-present
+                    border-width: 0 0 utl.rem(1) utl.rem(1)
+                    border-radius: 0 0 0 utl.rem(2)
+
+            &:horizontal
+                border-width: utl.rem(1) utl.rem(1) 0 utl.rem(1)
+                border-radius: utl.rem(2) utl.rem(2) 0 0
+
+        &-thumb
+            min-height: utl.rem(32)
+            background-color: var(--scrollbar-color)
+            background-clip: padding-box
+            border: utl.rem(5) solid transparent
+            border-radius: utl.rem(10)
+
+            &:hover
+                background-color: var(--scrollbar-hover)
+                border-width: utl.rem(4)

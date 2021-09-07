@@ -1,0 +1,42 @@
+@use "../utility" as utl
+
+button
+    border: none
+    padding: utl.rem(10) utl.rem(16)
+    cursor: pointer
+    transition: all ease-in 200ms
+    background-color: var(--primary-color)
+    color: var(--text-high)
+
+.btn
+
+    &-primary
+        &:hover
+            background-color: var(--content-bg-color-alt)
+
+    &-secondary
+        background-color: var(--content-bg-color-alt)
+        border-radius: 50%
+
+        &:hover
+            background-color: var(--content-bg-color)
+
+.t, .g
+
+    &-create--btn-group
+
+        $border: utl.rem(1.5) solid var(--content-bg-color-alt)
+        button
+            border-top: $border
+            padding: utl.rem(10) utl.rem(12)
+            width: 100%
+
+        .btn-primary
+            background-color: unset
+            border-left: $border
+            color: var(--primary-color)
+            font-weight: 500
+
+        .btn-secondary
+            background-color: unset
+            border-radius: unset

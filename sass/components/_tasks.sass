@@ -1,0 +1,55 @@
+@use "../utility" as utl
+
+//Styles for taks and completed
+.tasks-card, .completed-card
+    display: flex
+    flex-direction: column
+    gap: utl.rem(12)
+    transition: all ease-in 150ms
+
+.task-card--item
+    display: flex
+    gap: utl.rem(8)
+    background-color: var(--content-bg-color)
+    padding: utl.rem(10) utl.rem(12)
+    border-radius: utl.rem(4)
+
+    &__check
+        $size: utl.rem(20)
+        background-color: transparent
+        width: $size
+        height: $size
+        border: utl.rem(1.5) solid var(--primary-color)
+        border-radius: $size
+        cursor: pointer
+        position: relative
+        flex-shrink: 0
+
+    &__task
+        align-self: center
+
+        p
+            font-size: utl.rem(14)
+
+.completed-task
+    $size: utl.rem(12)
+
+    & > .task-card--item__check
+        border: utl.rem(1.5) solid var(--background-low)
+
+        &::after
+            content: ""
+            width: $size
+            height: $size
+            background-color: var(--background-low)
+            border-radius: $size
+            position: absolute
+            top: 50%
+            left: 50%
+            transform: translate(-50%, -50%)
+
+    & > .task-card--item__task
+
+        p
+            text-decoration: line-through
+            color: var(--text-bg-low)

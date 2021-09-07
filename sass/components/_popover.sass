@@ -1,0 +1,57 @@
+@use "../utility" as utl
+
+.pop
+    position: fixed
+    height: 100vh
+    width: 100%
+    background-color: var(--pop-bg)
+    z-index: 999
+
+    & ~ main
+        position: fixed
+        width: 100%
+
+.t, .g
+
+    &-create
+        position: relative
+        background-color: var(--background-color)
+        bottom: -100%
+        border-radius: utl.rem(4)
+        animation: slideUp ease-in 750ms forwards
+        display: flex
+        flex-direction: column
+        padding: utl.rem(16) utl.rem(16) 0 utl.rem(16)
+
+        @keyframes slideUp
+            from
+                transform: translateY(0%)
+            to
+                bottom: -50%
+                transform: translateY(-50%)
+
+        & .form-description
+            margin-bottom: utl.rem(16)
+
+            & > p
+                padding-top: utl.rem(6)
+                font-size: utl.rem(12)
+                color: var(--text-bg-low)
+
+                &.error
+                    color: var(--text-error)
+
+        &--btn-group
+            width: auto
+            margin: 0 utl.rem(-16)
+            display: flex
+
+.t
+    & > &-create-task
+        & ~ .g-create-group
+            display: none
+
+.g
+
+    & > .t-create-task
+        display: none

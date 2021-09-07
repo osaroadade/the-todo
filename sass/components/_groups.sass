@@ -1,0 +1,110 @@
+@use "../utility" as utl
+
+.groups
+    &-card
+        display: flex
+        gap: utl.rem(16)
+        overflow-x: scroll
+        margin: 0 utl.rem(-20)
+        padding: 0 utl.rem(20) utl.rem(16)
+
+        &--item
+            padding: utl.rem(16)
+            background-color: var(--content-bg-color)
+            flex-shrink: 0
+            border-radius: utl.rem(4)
+            width: utl.rem(160)
+            transition: all ease-in 150ms
+            cursor: pointer
+
+            &:hover
+                background-color: var(--content-bg-color-alt)
+
+            &__title
+                padding-bottom: utl.rem(8)
+
+                h4
+                    font-weight: 400
+
+            &__detail
+                padding-bottom: utl.rem(6)
+
+                p
+                    font-size: utl.rem(14)
+                    color: var(--text-low)
+
+            &__chart
+                display: flex
+                gap: utl.rem(6)
+                align-items: center
+
+                .horizontal-chart--main
+                    $size: utl.rem(5)
+
+                    position: relative
+                    height: $size
+                    width: 100%
+                    background-color: var(--background-low)
+                    border-radius: $size
+                    overflow: clip
+
+                    &__child
+                        position: absolute
+                        height: 100%
+                        width: 100%
+                        background-color: var(--primary-color)
+                        border-radius: $size
+                        transition: all ease-in 500ms
+                        left: -100%
+
+                p
+                    font-size: utl.rem(14)
+                    color: var(--text-low)
+
+    &-chart
+        background-color: var(--content-bg-color)
+        border-radius: utl.rem(4)
+        display: flex
+        padding: utl.rem(16)
+        justify-content: space-evenly
+        align-items: center
+
+        &__circle
+            height: utl.rem(140)
+            width: utl.rem(140)
+            position: relative
+
+            h4
+                position: absolute
+                top: 50%
+                left: 50%
+                transform: translate(-50%, -50%)
+                font-size: utl.rem(20)
+                font-weight: 500
+
+            svg
+                height: utl.rem(140)
+                width: utl.rem(140)
+                overflow: overlay
+
+                .track
+                    stroke: var(--background-low)
+                    fill: none
+                    stroke-width: utl.rem(6)
+
+                .progress
+                    fill: none
+                    stroke: var(--primary-color)
+                    stroke-width: utl.rem(6)
+                    transform: rotate(-90deg)
+                    transform-origin: center
+                    stroke-linecap: round
+
+        &__desc
+            list-style: none
+
+            li
+                font-size: utl.rem(12)
+
+                & + li
+                    padding-top: utl.rem(8)

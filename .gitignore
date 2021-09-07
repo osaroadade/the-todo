@@ -1,3 +1,4 @@
 ###Ignorng these files
 .idea/*
 node_modules
+sass.js

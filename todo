@@ -1,0 +1,68 @@
+Use JS modules (Done)
+Use JS dynamic modules import (Done)
+Set items in local storage
+Get items from local storage
+Custom scrollbar
+
+Dark Mode toggle using prefers color scheme
+Return to this later
+https://github.com/GoogleChromeLabs/dark-mode-toggle/blob/main/src/dark-mode-toggle.mjs
+
+Using the template tag in HTML instead of creating the entire HTML structure in JS. Try considering.
+
+Rendered the function asyncronocially but realized that I would actually need the the render method of the class at page load and would be better to make it a global import
+
+//Try using the template and see which is faster
+
+
+//template
+
+<!-- Completed task class goes here -->
+<!-- <div class="task-card--item">
+    <div class="task-card--item__check">
+        <div class="set-state"></div>
+    </div>
+    <div class="task-card--item__task">
+        <p>This is a task and it's here for sematic markup.</p>
+    </div>
+</div>
+<div class="task-card--item">
+    <div class="task-card--item__check">
+        <div class="set-state"></div>
+    </div>
+    <div class="task-card--item__task">
+        <p>This is a task and it's here for sematic markup.</p>
+    </div>
+</div>
+<div class="task-card--item">
+    <div class="task-card--item__check">
+        <div class="set-state"></div>
+    </div>
+    <div class="task-card--item__task">
+        <p>This is a task and it's here for sematic markup.</p>
+    </div>
+</div>
+<div class="task-card--item">
+    <div class="task-card--item__check">
+        <div class="set-state"></div>
+    </div>
+    <div class="task-card--item__task">
+        <p>This is a task and it's here for sematic markup.</p>
+    </div>
+</div> -->
+
+
+
+
+
+<!-- Research more about this -->
+<!-- <template id="task-structure">
+    <div class="task-card--item">
+        <div class="task-card--item__check">
+            <div class="set-state"></div>
+        </div>
+        <div class="task-card--item__task">
+            <p>This is a task and it's here for sematic markup.</p>
+        </div>
+    </div>
+</template> -->
